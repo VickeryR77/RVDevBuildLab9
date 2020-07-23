@@ -1,0 +1,13 @@
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\bin\Debug\netcoreapp3.1\MoviesClassAndList.exe
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\bin\Debug\netcoreapp3.1\MoviesClassAndList.deps.json
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\bin\Debug\netcoreapp3.1\MoviesClassAndList.runtimeconfig.json
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\bin\Debug\netcoreapp3.1\MoviesClassAndList.runtimeconfig.dev.json
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\bin\Debug\netcoreapp3.1\MoviesClassAndList.dll
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\bin\Debug\netcoreapp3.1\MoviesClassAndList.pdb
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.csprojAssemblyReference.cache
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.AssemblyInfoInputs.cache
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.AssemblyInfo.cs
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.csproj.CoreCompileInputs.cache
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.dll
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.pdb
+C:\Users\RVICKERY\source\repos\MoviesClassAndList\obj\Debug\netcoreapp3.1\MoviesClassAndList.genruntimeconfig.cache
