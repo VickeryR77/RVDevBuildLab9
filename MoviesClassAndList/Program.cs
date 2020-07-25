@@ -38,8 +38,14 @@ namespace MoviesClassAndList
         }
     
     }
+
+
+
     class Program
     {
+
+        public static void AddMovie() { }
+
         static void Main(string[] args)
         {
 
@@ -116,7 +122,7 @@ namespace MoviesClassAndList
                     Console.WriteLine("");
                 }
 
-                MovieList.to();
+                //MovieList.to();
 
                 foreach (Movie film in MovieList)
                 {
