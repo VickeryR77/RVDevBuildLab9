@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace MoviesClassAndList
 {
-
     class Movie
     { 
         private string _title;
@@ -11,10 +11,20 @@ namespace MoviesClassAndList
         private string _category;
         public string Category { get { return _category; } set { _category = value; } }
 
-        public Movie(string thetitle, string thecategory)
+        private string _runtime;
+
+        public string RunTime { get{ return _runtime; } set{ _runtime = value; } }
+
+        private string _yearreleased;
+
+        public string YearReleased { get { return _yearreleased; } set { _yearreleased = value; } }
+
+        public Movie(string thetitle, string thecategory, string theruntime, string theyearreleased)
         {
             _title = thetitle;
             _category = thecategory;
+            _runtime = theruntime;
+            _yearreleased = theyearreleased;
         }
 
         public string GetCategory()
@@ -27,6 +37,16 @@ namespace MoviesClassAndList
             return Title;
         }
 
+        public string GetRunTime()
+        {
+            return RunTime;
+        }
+
+        public string GetYearReleased()
+        {
+            return YearReleased;
+        }
+
         public void SetTitle(string entry)
         {
             Title = entry;
@@ -36,117 +56,108 @@ namespace MoviesClassAndList
         {
             Category = entry;
         }
-    
+
+        public void SetRunTime(string entry)
+        {
+            RunTime = entry;
+        }
+
+        public void SetYearReleased(string entry)
+        {
+            YearReleased = entry;
+        }
+
     }
-
-
 
     class Program
     {
 
-        public static void AddMovie() { }
-
         static void Main(string[] args)
-        {
-
+        {            
             List<Movie> MovieList = new List<Movie>();
 
-            Movie movie = new Movie("The Road to El Dorado", "Animated");
-            MovieList.Add(movie);
+            MovieList.Add(new Movie("The Road to El Dorado", "Animated","96 Minutes","2000"));
+            MovieList.Add(new Movie("Starship Troopers", "Sci-Fi," ,"129 Minutes","1997"));
+            MovieList.Add(new Movie("Underwater", "Horror", "95 Minutes", "2020"));
+            MovieList.Add(new Movie("Howl's Moving Castle", "Animated", "119 Minutes", "2004"));
+            MovieList.Add(new Movie("Alien", "Sci-Fi", "117 Minutes", "1979"));
+            MovieList.Add(new Movie("Sinister", "Horror", "110 Minutes", "2012"));
+            MovieList.Add(new Movie("Pulp Fiction", "Drama","178 Minutes","1994"));
+            MovieList.Add(new Movie("Fantastic Planet", "Animated", "72 Minutes", "1973"));
+            MovieList.Add(new Movie("Starwars", "Sci-Fi", "125 Minutes", "1977"));
+            MovieList.Add(new Movie("It", "Horror", "192 Minutes", "1990"));
+            MovieList.Add(new Movie("The Shawshank Redemption", "Drama", "142 Minutes", "1994"));
+            MovieList.Add(new Movie("Ponyo", "Animated", "103 Minutes", "2008"));
+            MovieList.Add(new Movie("Serenity", "Sci-Fi", "119 Minutes", "2005"));
+            MovieList.Add(new Movie("In the Mouth of Madness", "Horror", "95 Minutes", "1994"));
+            MovieList.Add(new Movie("Good Will Hunting", "Drama", "127 Minutes", "1997"));
+           
+            GetCategories(MovieList);
+        }
 
-            Movie movie2 = new Movie("Starship Troopers", "Sci-Fi");
-            MovieList.Add(movie2);
-
-            Movie movie3 = new Movie("Underwater", "Horror");
-            MovieList.Add(movie3);
-
-            Movie movie4 = new Movie("Howl's Moving Castle", "Animated");
-            MovieList.Add(movie4);
-
-            Movie movie5 = new Movie("Alien", "Sci-Fi");
-            MovieList.Add(movie5);
-
-            Movie movie6 = new Movie("Sinister", "Horror");
-            MovieList.Add(movie6);
-
-            Movie movie7 = new Movie("Pulp Fiction", "Drama");
-            MovieList.Add(movie7);
-
-            Movie movie8 = new Movie("Fantastic Planet", "Animated");
-            MovieList.Add(movie8);
-
-            Movie movie9 = new Movie("Starwars", "Sci-Fi");
-            MovieList.Add(movie9);
-
-            Movie movie10 = new Movie("It", "Horror");
-            MovieList.Add(movie10);
-
-            Movie movie11 = new Movie("The Shawshank Redemption", "Drama");
-            MovieList.Add(movie11);
-
-            Movie movie12 = new Movie("Ponyo", "Animated");
-            MovieList.Add(movie12);
-
-            Movie movie13 = new Movie("Serenity", "Sci-Fi");
-            MovieList.Add(movie13);
-
-            Movie movie14 = new Movie("In the Mouth of Madness", "Horror");
-            MovieList.Add(movie14);
-
-            Movie movie15 = new Movie("Good Will Hunting", "Drama");
-            MovieList.Add(movie15);
+        public static void GetCategories(List<Movie> MovieList)
+        {
 
             bool running = true;
             while (running)
             {
-                Console.Clear();
-                Console.WriteLine("");
-                Console.WriteLine("What category of movie are you interested in checking out?");
-                Console.WriteLine("|********************************************************|");
-                Console.WriteLine("|      Animated  |     Drama  |    Horror   |    SciFi   |");
-                Console.WriteLine("|********************************************************|");
-
+                DrawMenuA();
                 string entry = Console.ReadLine().ToLower();
                 Console.WriteLine("");
-                
+
                 while (entry != "animated" && entry != "drama" && entry != "horror" && entry != "scifi")
                 {
-                    Console.Clear();
-                    Console.WriteLine("");
-                    Console.WriteLine("That is not a valid category. Please select one from below.");
-                    Console.WriteLine("|********************************************************| ");
-                    Console.WriteLine("|      Animated  |     Drama  |    Horror   |    SciFi   | ");
-                    Console.WriteLine("|********************************************************| ");
-
+                    DrawMenuA();
                     entry = Console.ReadLine().ToLower();
                     Console.WriteLine("");
                 }
 
-                //MovieList.to();
-
+                DrawMenuB();
                 foreach (Movie film in MovieList)
                 {
 
                     if (entry == "animated" && film.Category == "Animated")
                     {
-                        Console.WriteLine($"{film.Title,-23}{film.Category,20}");
+                        Console.WriteLine($"| {film.Title,-23} | {film.RunTime,12} |     {film.YearReleased,4}      | ");
                     }
                     if (entry == "drama" && film.Category == "Drama")
                     {
-                        Console.WriteLine($"{film.Title,-24}{film.Category,20}");
+                        Console.WriteLine($"| {film.Title,-24} | {film.RunTime,12} |     {film.YearReleased,4}     | ");
                     }
                     if (entry == "scifi" && film.Category == "Sci-Fi")
                     {
-                        Console.WriteLine($"{film.Title,-20}{film.Category,20}");
+                        Console.WriteLine($"| {film.Title,-20} | {film.RunTime,12} |       {film.YearReleased,4}       | ");
                     }
                     if (entry == "horror" && film.Category == "Horror")
                     {
-                        Console.WriteLine($"{film.Title,-23}{film.Category,20}");
+                        Console.WriteLine($"| {film.Title,-23} | {film.RunTime,12} |     {film.YearReleased,4}      | ");
                     }
                 }
+                        Console.WriteLine("|--------------------------------------------------------|");
                 GetRepeat(out running);
-
             }
+        }
+
+        public static void DrawMenuA() 
+        {
+
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("What category of movie are you interested in checking out?");
+            Console.WriteLine("|********************************************************|");
+            Console.WriteLine("|    Animated   |    Drama   |    Horror   |     SciFi   |");
+            Console.WriteLine("|********************************************************|");
+
+        }
+        public static void DrawMenuB() 
+        {
+
+            Console.Clear();
+            Console.WriteLine("|********************************************************|");
+            Console.WriteLine("|    Animated   |    Drama   |    Horror   |     SciFi   |");
+            Console.WriteLine("|********************************************************|");
+            Console.WriteLine("|--------------------------------------------------------|");
+
         }
         public static void GetRepeat(out bool running)
         {
@@ -177,5 +188,4 @@ namespace MoviesClassAndList
         }
 
     }
-
     }
